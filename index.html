@@ -422,6 +422,16 @@
         var(--screen);
     }
 
+    .theme-section[data-theme="atlas"] .status,
+    .theme-section[data-theme="atlas"] .status .row,
+    .theme-section[data-theme="atlas"] .phone-bars {
+      color: #000 !important;
+    }
+
+    .theme-section[data-theme="atlas"] .battery i {
+      background: #000;
+    }
+
     .theme-section[data-theme="atelier"] .screen {
       background:
         radial-gradient(circle at 18% 50%, rgba(255,106,0,.42), transparent 25%),
@@ -1553,10 +1563,35 @@
       border-radius: 999px;
     }
 
-    .ship-hero .ship-chip,
+    .ship-hero-head,
     .ship-hero .ship-title {
       position: relative;
       z-index: 2;
+    }
+
+    .ship-hero-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      min-height: 30px;
+      margin-bottom: 17px;
+    }
+
+    .ship-logo {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      color: var(--text-in);
+      font-family: var(--display-font);
+      font-size: 16px;
+      font-weight: 950;
+      letter-spacing: -.07em;
+      line-height: 1;
+    }
+
+    .ship-logo span {
+      color: var(--accent);
     }
 
     .ship-hero .ship-title {
@@ -1567,7 +1602,7 @@
       position: absolute;
       left: 16px;
       right: 16px;
-      top: 184px;
+      top: 164px;
       height: 374px;
       overflow: hidden;
       border-radius: 33px;
@@ -2782,21 +2817,7 @@
       border-bottom: 1px solid rgba(7,7,7,.12);
       background:
         linear-gradient(120deg, rgba(255,106,0,.12), rgba(255,77,166,.1) 52%, rgba(255,217,90,.08)),
-        url("assets/returnit-map-atelier-realistic.png") center / cover;
-    }
-
-    .growth-action-art::before {
-      content: "";
-      position: absolute;
-      left: 20px;
-      right: 20px;
-      top: 32px;
-      height: 3px;
-      border-radius: 999px;
-      background: #ff5b23;
-      box-shadow: 0 0 0 1px rgba(255,255,255,.52), 0 8px 18px rgba(255,91,35,.18);
-      transform: rotate(-7deg);
-      transform-origin: left center;
+        url("assets/returnit-map-original-realistic.png") center / cover;
     }
 
     .growth-action-art::after {
@@ -2809,26 +2830,6 @@
       border: 1px solid rgba(7,7,7,.16);
       background: rgba(255,255,255,.24);
       backdrop-filter: blur(8px);
-    }
-
-    .growth-route-dot {
-      position: absolute;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      border: 2px solid #070707;
-      background: #fff;
-    }
-
-    .growth-route-dot.start {
-      left: 26px;
-      top: 34px;
-    }
-
-    .growth-route-dot.end {
-      right: 50px;
-      top: 20px;
-      background: #ff5b23;
     }
 
     .growth-action-stat {
@@ -4025,8 +4026,6 @@
         <div class="growth-panel" style="margin-top:20px;padding:14px 0">
           <div class="row" style="padding:0 0 14px"><span class="growth-label">Create New Return</span><span class="growth-label">Apparel · from $12 ↗</span></div>
           <div class="growth-action-art">
-            <span class="growth-route-dot start"></span>
-            <span class="growth-route-dot end"></span>
             <div class="growth-action-stat"><b>2.3 mi</b><span>Target · Downtown</span></div>
           </div>
         </div>
@@ -4152,10 +4151,6 @@
       const activeReturns = [[RT.item1, `${RT.store1} · ${RT.eta}`, "In Transit", "$149"], [RT.item2, `${RT.store2} · ${RT.wait}`, "Pending", "$89"]];
 
       if (screen === "welcome") return frame(`
-        <div class="row" style="position:relative;z-index:2;margin:10px 0 16px">
-          ${wordmark}
-          <span class="uber-pill live">Miami live</span>
-        </div>
         <div style="text-align:center;margin-top:46px">
           <h1 class="uber-title" style="font-size:54px;line-height:.92">Return<span style="color:var(--accent-2)">It</span></h1>
           <div class="uber-label" style="margin-top:12px">Hassle-free returns</div>
@@ -4729,8 +4724,11 @@
       const frame = (body, opts = {}) => conceptFrame({ id: "atlas" }, `<div class="ship">${body}</div>`, opts);
       if (screen === "welcome") return frame(`
         <div class="ship-hero">
-          <div class="ship-chip">📦 Hassle-free returns</div>
-          <h1 class="ship-title" style="margin-top:16px">ReturnIt<em>Doorstep returns to the store</em></h1>
+          <div class="ship-hero-head">
+            <div class="ship-logo">Return<span>It</span></div>
+            <div class="ship-chip">📦 Hassle-free returns</div>
+          </div>
+          <h1 class="ship-title"><em>Returns handled from door to store.</em></h1>
           <div class="ship-hero-art"><img class="ship-hero-img" src="assets/returnit-green-courier-scooter.png" alt=""></div>
           <div class="ship-phone-entry">
             <div class="ship-phone-label">Start with your mobile number</div>
