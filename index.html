@@ -968,12 +968,8 @@
       border-radius: var(--radius-sm);
       border: 1px solid var(--border-in);
       background:
-        radial-gradient(circle at 18% 82%, rgba(255,255,255,.72) 0 16px, transparent 17px),
-        linear-gradient(115deg, transparent 0 58%, rgba(105,156,176,.23) 59% 100%),
-        linear-gradient(90deg, rgba(255,255,255,.34) 1px, transparent 1px),
-        linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
-        linear-gradient(135deg, #d8e7f0, #edf0e7 44%, #e6e0d1);
-      background-size: auto, auto, 34px 34px, 34px 34px, auto;
+        linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.02)),
+        url("assets/returnit-map-original-realistic.png") center / cover;
       box-shadow: inset 0 1px 0 rgba(255,255,255,.66);
     }
 
@@ -985,30 +981,14 @@
     }
 
     .map::before {
-      left: -26px;
-      right: -34px;
-      top: 47px;
-      height: 20px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.78);
-      box-shadow:
-        0 1px 0 rgba(42,52,44,.08),
-        0 44px 0 rgba(255,255,255,.72),
-        94px -30px 0 -3px rgba(255,255,255,.68);
-      transform: rotate(-34deg);
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.28), transparent 44%),
+        radial-gradient(circle at 82% 18%, rgba(255,255,255,.42), transparent 24%);
     }
 
     .map::after {
-      left: 108px;
-      top: -28px;
-      width: 18px;
-      height: 210px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.72);
-      box-shadow:
-        72px 10px 0 -2px rgba(255,255,255,.58),
-        -78px 28px 0 -3px rgba(255,255,255,.52);
-      transform: rotate(42deg);
+      display: none;
     }
 
     .map-block {
@@ -1029,6 +1009,11 @@
       border-radius: 999px;
       background: rgba(255,255,255,.86);
       box-shadow: 0 1px 0 rgba(42,52,44,.1);
+    }
+
+    .map-block,
+    .map-road {
+      display: none;
     }
 
     .map-road.main {
@@ -1882,25 +1867,15 @@
       position: relative;
       overflow: hidden;
       background:
-        radial-gradient(circle at 70% 42%, rgba(8,127,18,.18) 0 12px, transparent 13px),
-        linear-gradient(35deg, transparent 48%, rgba(8,127,18,.36) 49% 50%, transparent 51%),
-        linear-gradient(112deg, transparent 42%, rgba(31,95,45,.16) 43% 44%, transparent 45%),
-        linear-gradient(90deg, rgba(31,95,45,.08) 1px, transparent 1px),
-        linear-gradient(rgba(31,95,45,.08) 1px, transparent 1px),
-        #edf8ea;
-      background-size: auto, auto, auto, 28px 28px, 28px 28px, auto;
+        linear-gradient(180deg, rgba(237,255,232,.22), rgba(237,255,232,.05)),
+        url("assets/returnit-map-atlas-realistic.png") center / cover;
     }
 
     .ship-map.mini {
       border: 1px solid rgba(31,95,45,.1);
       background:
-        radial-gradient(circle at 72% 42%, rgba(8,127,18,.14) 0 12px, transparent 13px),
-        linear-gradient(35deg, transparent 48%, rgba(8,127,18,.28) 49% 50%, transparent 51%),
-        linear-gradient(112deg, transparent 42%, rgba(31,95,45,.12) 43% 44%, transparent 45%),
-        linear-gradient(90deg, rgba(31,95,45,.055) 1px, transparent 1px),
-        linear-gradient(rgba(31,95,45,.055) 1px, transparent 1px),
-        #effbea;
-      background-size: auto, auto, auto, 28px 28px, 28px 28px, auto;
+        linear-gradient(180deg, rgba(237,255,232,.26), rgba(237,255,232,.08)),
+        url("assets/returnit-map-atlas-realistic.png") center / cover;
     }
 
     .ship-route-map {
@@ -1909,13 +1884,8 @@
       border: 1px solid rgba(31,95,45,.11);
       border-radius: 24px;
       background:
-        radial-gradient(circle at 82% 26%, rgba(8,127,18,.14) 0 13px, transparent 14px),
-        linear-gradient(35deg, transparent 45%, rgba(8,127,18,.24) 46% 47.5%, transparent 49%),
-        linear-gradient(114deg, transparent 36%, rgba(31,95,45,.12) 37% 38%, transparent 39%),
-        linear-gradient(90deg, rgba(31,95,45,.05) 1px, transparent 1px),
-        linear-gradient(rgba(31,95,45,.05) 1px, transparent 1px),
-        #f1fbea;
-      background-size: auto, auto, auto, 26px 26px, 26px 26px, auto;
+        linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.02)),
+        url("assets/returnit-map-atlas-realistic.png") center / cover;
     }
 
     .ship-route-map::before {
@@ -2811,8 +2781,8 @@
       border-top: 1px solid rgba(7,7,7,.12);
       border-bottom: 1px solid rgba(7,7,7,.12);
       background:
-        linear-gradient(120deg, rgba(255,106,0,.24), rgba(255,77,166,.18) 52%, rgba(255,217,90,.18)),
-        rgba(255,255,255,.22);
+        linear-gradient(120deg, rgba(255,106,0,.12), rgba(255,77,166,.1) 52%, rgba(255,217,90,.08)),
+        url("assets/returnit-map-atelier-realistic.png") center / cover;
     }
 
     .growth-action-art::before {
@@ -2821,9 +2791,11 @@
       left: 20px;
       right: 20px;
       top: 32px;
-      height: 1px;
-      background: rgba(7,7,7,.28);
-      transform: rotate(-8deg);
+      height: 3px;
+      border-radius: 999px;
+      background: #ff5b23;
+      box-shadow: 0 0 0 1px rgba(255,255,255,.52), 0 8px 18px rgba(255,91,35,.18);
+      transform: rotate(-7deg);
       transform-origin: left center;
     }
 
@@ -2835,7 +2807,7 @@
       width: 52px;
       height: 52px;
       border: 1px solid rgba(7,7,7,.16);
-      background: rgba(255,255,255,.34);
+      background: rgba(255,255,255,.24);
       backdrop-filter: blur(8px);
     }
 
@@ -2896,14 +2868,24 @@
       border-top: 0;
     }
 
-    .growth-option {
-      padding: 14px 0 16px;
+    .growth-options-group {
       border-top: 1px solid rgba(7,7,7,.14);
+      border-bottom: 1px solid rgba(7,7,7,.14);
+      background: rgba(255,255,255,.14);
+    }
+
+    .growth-option {
+      padding: 13px 0 14px;
+      border-top: 1px solid rgba(7,7,7,.14);
+    }
+
+    .growth-options-group .growth-option:first-child {
+      border-top: 0;
     }
 
     .growth-option .growth-small {
       max-width: 260px;
-      margin-top: 8px;
+      margin-top: 6px;
     }
 
     .growth-tip-row {
@@ -3618,7 +3600,7 @@
       {
         id: "pop",
         no: "03",
-        name: "Design 3 · Uber Mode",
+        name: "Design 3",
         short: "Design 3"
       },
       {
@@ -4053,19 +4035,20 @@
       `, { nav: true });
       if (screen === "options") return frame(`
         ${top("←", true)}
-        <h1 class="growth-title tight" style="margin-bottom:18px">CHOOSE RETURN OPTION</h1>
-        <div class="growth-option">
-          <div class="row"><span class="growth-label">STANDARD</span><span class="growth-label">${RT.fee}</span></div>
-          <div class="growth-small">Package routed through our return hub</div>
-          <div class="growth-small">Return completed the next day</div>
-          <div class="growth-small">Pickup window: 10:30 PM – 2:30 AM</div>
-        </div>
-        <div class="growth-bars" style="min-height:112px;margin:2px 0 10px"><div class="growth-bar" style="height:56%"></div><div class="growth-bar" style="height:82%"></div><div class="growth-bar" style="height:38%"></div></div>
-        <div class="growth-option">
-          <div class="row"><span class="growth-label">PREMIUM</span><span class="growth-label">${RT.premium}</span></div>
-          <div class="growth-small">Priority pickup with direct delivery to store</div>
-          <div class="growth-small">Driver assigned immediately</div>
-          <div class="growth-small">Same-day or next-morning handling</div>
+        <h1 class="growth-title tight" style="margin-bottom:20px">CHOOSE RETURN OPTION</h1>
+        <div class="growth-options-group">
+          <div class="growth-option">
+            <div class="row"><span class="growth-label">STANDARD</span><span class="growth-label">${RT.fee}</span></div>
+            <div class="growth-small">Package routed through our return hub</div>
+            <div class="growth-small">Return completed the next day</div>
+            <div class="growth-small">Pickup window: 10:30 PM – 2:30 AM</div>
+          </div>
+          <div class="growth-option">
+            <div class="row"><span class="growth-label">PREMIUM</span><span class="growth-label">${RT.premium}</span></div>
+            <div class="growth-small">Priority pickup with direct delivery to store</div>
+            <div class="growth-small">Driver assigned immediately</div>
+            <div class="growth-small">Same-day or next-morning handling</div>
+          </div>
         </div>
         <button class="growth-cta" style="position:absolute;left:20px;right:20px;bottom:26px;width:auto">Continue ↗</button>
       `);
@@ -4752,7 +4735,6 @@
           <div class="ship-phone-entry">
             <div class="ship-phone-label">Start with your mobile number</div>
             <div class="ship-phone-field"><span class="ship-phone-code">+1</span><span class="ship-phone-number">(305) 555-0148</span><span class="ship-check">→</span></div>
-            <div class="ship-phone-actions"><span class="ship-phone-action primary">Continue</span><span class="ship-phone-action">Sign in</span></div>
           </div>
         </div>
       `);
